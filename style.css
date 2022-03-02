@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200&display=swap');
+
+* {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.str {
+    text-align: center;
+}
+
+#range-value {
+    width: 40px;
+}
+
+.range__container {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
