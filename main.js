@@ -1,5 +1,5 @@
 let arr = [10];
-let i, j;
+let i, j, k;
 let range = document.querySelector('#range');
 let display = document.querySelector('.display')
 let rangeValue = document.querySelector('#range-value');
@@ -10,23 +10,25 @@ const pascal = (size) => {
     }
  
     arr[0] = 1;
+
     for (j = 1; j <= size; j++) {
-        let str = document.createElement('div')
-        str.className = 'str'
+
+            let str = document.createElement('div')
+            str.className = 'str'
+            str.style.gridTemplateColumns = `repeat(${j}, 100px)`
+
         for (i = j; i >= 1 ; i--) {
-            str.textContent += `${arr[i-1]}  `;
+
+            let num = document.createElement('div')
+            num.className = 'num'
+
+            num.textContent = `${arr[i-1]}`;
             arr[i] = arr[i-1] + arr[i];
-        }
-        display.appendChild(str)
-    }
+            str.appendChild(num)
+        } 
 
-    let str = document.createElement('div')
-    str.className = 'str'
-
-    for (i = 0; i <= size; i++) {
-        str.textContent += `${arr[i]}  `;  
+        display.appendChild(str) 
     }
-    display.appendChild(str)
 }
 
 rangeValue.textContent = range.value;
